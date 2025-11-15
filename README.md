@@ -22,5 +22,6 @@ int main(){
 `HelloWorld.`
 
 一行ずつ日本語に訳しながら説明する。<br>
+
 1.`#include <iostream>`はiostreamというファイルを読み込むときに用いる宣言。単にヘッダと呼ばれる。
 1. `using namespace std;`は指定された名前(今回はstd)の名前空間を使うことを意味している。4行目のcoutはここに定義が含まれている。
