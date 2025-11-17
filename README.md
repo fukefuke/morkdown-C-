@@ -12,6 +12,11 @@
 ・メソッド:オブジェクト(モノ）の動き<br>
 ・属性:メソッドの情報そのもの<br>
 ・クラス:変数と関数の定義をあらかじめしておく場所。クラスの中で定義されたものをメンバといい、それぞれメンバ変数とメンバ関数という。
+・メンバ関数のことをメソッドともいう。
+・アクセス修飾子(public、privateなど)<br>
+>public：メンバ関数の宣言の前に
+>private:メンバ変数の宣言の前に
+
 ## 1日目
 ### 名前空間、coutの使用例
 ```cpp
@@ -86,5 +91,58 @@ int main(){
 
 
 ## 2日目
+```cpp
+//sample.h
+#ifndef _SAMPLE_H_
+#define _SAMPLE_H_
+ 
+// クラス宣言
+class CSample
+{
+public:
+    void set(int num);  // m_numに値を設定する
+    int get();          // m_numの値を取得する
+private:
+    int m_num;
+};
+#endif //_SAMPLE_H_
+```
+CSampleはクラス名、m_numをメンバ変数、function()をメンバ関数である。
+```cpp
+//sample.cpp
+#include "sample.h"
+ 
+void CSample::set(int num)
+{
+    m_num = num;
+}
+ 
+int CSample::get()
+{
+    return m_num;
+}
+```
+```cpp
+//main.cpp
+#include <iostream>
+#include "sample.h"
+ 
+using namespace std;
+ 
+int main()
+{
+    CSample obj;  // CSampleをインスタンス化
+    int num;
+     
+    cout << "整数を入力して下さい:" << endl;
+    cin >> num;
+     
+    obj.set( num );  // CSampleのメンバ変数をセット
+    cout << obj.get() << endl;  // メンバ変数の値を出力
+ 
+    return 0;
+}
+```
+
  
 
